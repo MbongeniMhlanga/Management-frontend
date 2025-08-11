@@ -1,0 +1,157 @@
+/* ------------------ BASE APP STYLES ------------------ */
+.App, body, #root {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  text-align: center;
+
+  /* Animated liquid glassy gradient background */
+  background: linear-gradient(270deg, #0a1a2a, #14375a, #0a1a2a, #123b5d);
+  background-size: 800% 800%;
+  animation: gradientGlow 25s ease infinite;
+  position: relative;
+  /*overflow: hidden;*/
+}
+@keyframes gradientGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: transparent;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #ff6a00; /* Accent orange */
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 0.5rem 1rem rgba(255, 106, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateY(-5px);
+}
+
+/* ------------------ DASHBOARD STYLES ------------------ */
+.dashboard-hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: transparent;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.accent {
+  color: #ff6a00;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #bbb;
+  margin-top: 0.5rem;
+}
+
+.stats-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .stats-section {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Glassmorphic Stat Card */
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);  /* Increase transparency to 0.1 */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Slightly stronger white border */
+  backdrop-filter: blur(18px); /* stronger blur */
+  -webkit-backdrop-filter: blur(18px);
+  padding: 2rem;
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  /* Add a subtle inner shadow for depth */
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1), 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(255, 106, 0, 0.4);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ff6a00;
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ------------------ FADE-IN ANIMATION ------------------ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
