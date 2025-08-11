@@ -100,9 +100,10 @@ const DepartmentDetail = () => {
         paddingRight: 0,
       }}
     >
-      <Link to={`/employees/${emp.id}`} className="text-info">
-        {emp.name}
-      </Link>
+      <Link to={`/employees/${emp.id}`} style={{ color: 'white' }}>
+  {emp.name}
+</Link>
+
     </li>
   ))}
 </ul>
