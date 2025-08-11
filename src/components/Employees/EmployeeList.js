@@ -28,7 +28,7 @@ const EmployeeList = () => {
 
     if (search) {
       result = result.filter(emp =>
-        emp.name.toLowerCase().includes(search.toLowerCase())
+        emp.email.toLowerCase().includes(search.toLowerCase())
       );
     }
 
@@ -81,7 +81,7 @@ const EmployeeList = () => {
         <div className="mb-3 d-flex gap-2 flex-wrap">
           <input
             type="text"
-            placeholder="Search by name..."
+            placeholder="Search by email..."
             className="form-control"
             style={{ maxWidth: 300 }}
             value={search}
